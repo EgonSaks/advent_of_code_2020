@@ -85,13 +85,20 @@ seat_map = [x.strip() for x in seat_map]
 # List of seat_id's
 seat_ids = []
 
+
 for seat in seat_map:
     result = row_and_column_finder(seat)
     seat_id = get_seat_id(result)
     seat_ids.append(seat_id)
 
+#print(f"Seat ID-s: {seat_ids}")
+
+smallest_seat_ID = min(seat_ids)
 highest_seat_ID = max(seat_ids)
+
+print(f"Smallest seat ID: {smallest_seat_ID}")
 print(f"Highest seat ID: {highest_seat_ID}")
 
+my_seat_ID = [seat for seat in range(min(seat_ids), max(seat_ids)) if seat not in seat_ids][0] 
 
-print(f"Solution 2: {[seat for seat in range(min(seat_ids), max(seat_ids)) if seat not in seat_ids][0]}")
+print(f"My seat ID is: {my_seat_ID}")
