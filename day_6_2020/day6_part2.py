@@ -12,7 +12,7 @@ def questions_to_which_everyone_answered_yes(questions):
 		#print(main_set)
 		for people in group[1:]:
 			main_set = main_set.intersection(set(people))
-			print(main_set)
+			#print(main_set)
 
 		questions_to_which_everyone_answered_yes += len(main_set)
 		
